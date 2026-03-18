@@ -189,7 +189,6 @@ footer nav ul {
 
 
 /* Ajout */
-
 .filter{
 	display: flex;
 	align-items: center;
@@ -198,7 +197,7 @@ footer nav ul {
 	gap: 15px;
 }
 
-.filter button{
+.button{
 background-color: #fff;
 padding: 5px 10px;
 border-radius: 20px;
@@ -208,7 +207,7 @@ font-weight: 700;
 font-family: 'Syne' ;
 
 }
-.filter button:hover{
+.button:hover {
 	background-color:#0E2F28;
 	color: #fff
  ;
