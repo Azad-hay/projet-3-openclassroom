@@ -186,3 +186,30 @@ footer nav ul {
 	margin: 2em
 }
 
+
+
+/* Ajout */
+
+.filter{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 25px;
+	gap: 15px;
+}
+
+.filter button{
+background-color: #fff;
+padding: 5px 10px;
+border-radius: 20px;
+border: 1px solid #1D6154;
+color: #1D6154;
+font-weight: 700;
+font-family: 'Syne' ;
+
+}
+.filter button:hover{
+	background-color:#0E2F28;
+	color: #fff
+ ;
+}
