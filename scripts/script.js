@@ -1,6 +1,27 @@
-// works fetcher — store works in outer variable
-let allWorks = [];
 
+const token = localStorage.getItem('token');
+
+if (token) {
+  document.querySelector('.edition-mode').style.display = 'flex';
+  document.querySelector('.modification').style.display = 'inline-flex';
+  document.querySelector('.filter').style.display = 'none';
+  
+  document.querySelector('.login').textContent =''
+  
+  const aLogout = document.createElement('a')
+
+  aLogout.textContent = 'logout'
+  aLogout.href = 'index.html'
+  document.querySelector('.login').appendChild(aLogout)
+
+  aLogout.addEventListener('click', () => localStorage.clear('token') )
+
+}
+
+
+
+
+let allWorks = [];
 
 
 function renderGallery(works) {
@@ -8,11 +29,20 @@ function renderGallery(works) {
   gallery.innerHTML = '';
   works.forEach(work => {
     const card = document.createElement('div');
-    card.className = 'card';
-    card.innerHTML = `
-      ${work.imageUrl ? `<img src="${work.imageUrl}" alt="${work.title}">` : ''}
-      <p class="title">${work.title}</p>`;
-    gallery.appendChild(card);
+    card.className =('card');
+
+    const cardImg = document.createElement('img');
+    cardImg.src = (work.imageUrl);
+    cardImg.alt = (work.title)
+
+    const cardTitle = document.createElement('p')
+    cardTitle.className = ('title')
+    cardTitle.textContent = (work.title)
+
+    gallery.appendChild(card)
+    card.appendChild(cardImg)
+    card.appendChild(cardTitle)
+    
   });
 }
 
@@ -46,6 +76,9 @@ function renderGallery(works) {
       buttonFilter.dataset.id = categories.id;
       buttonFilter.textContent = categories.name;
       button.appendChild(buttonFilter);
+
+     
+      
     });
 
     button.addEventListener('click', function(e) {
