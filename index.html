@@ -38,7 +38,41 @@
 		</article>
 	</section>
 	<section id="portfolio">
-		<h2>Mes Projets <span class="modification"><img src="assets/icons/noir.png" alt="Mode édition">modifier</span></h2>
+		<h2>Mes Projets <button class="modification"><a href="#modal"><img src="assets/icons/noir.png" alt="Mode édition">modifier</a></button></h2>
+
+		<aside id="modal" class="modal">
+
+			<div class="modalGalerie">
+				<h3>Galerie photo</h3>
+				<div class="galerieModal"></div>
+				<br>
+				<button>Ajouter une photo</button>
+			</div>
+			
+			<div id="ajout" class="modalAjout">
+				<button class="arrow"><img src="assets/icons/arrow-left.png" alt="Retour en arrière"></button>
+				<button class="cross"><img src="assets/icons/xmark.png" alt="Fermer"></button>
+				<h3>Ajout photo</h3>
+				<form action="submit">
+					<div class="ajoutImage">
+						<img src="assets/icons/picture.png" alt="Ajouter une photo">
+						<button>+ Ajouter photo 
+							<input type="file" id="inputFile" accept="image/jpeg,image/png"  required>
+						</button>
+						<p>jpg, png : 4mo max</p>
+					</div>
+					<label for="imageTitle" class="imageTitle">Titre</label>
+					<input type="text" id="imageTitle" required>
+					<label for="imageCategorie" class="imageCat">Catégorie</label>
+					<select name="selectCategorie" id="imageCategorie" required>
+						<option value=""></option>
+					</select>
+					<br>
+					<button>Valider</button>
+				</form>
+			</div>
+			
+		</aside>
 		<div class="filter">
 		</div>
 		<div class="gallery">

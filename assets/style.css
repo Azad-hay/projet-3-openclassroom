@@ -207,15 +207,21 @@ footer nav ul {
 	padding-top: 100px;
 }
 
-.modification {
+.modification{
 	font-size: 14px;
 	color: #000;
 	display: none;
-	
+	background: #fff;
+	border: 0;
 }
 
-#portfolio img{
-	margin: 0 10px 0 20px;
+.modification img{
+	padding: 0 5px;
+}
+
+.modification a{
+	text-decoration: none;
+	color: #000;
 }
 
 .filter{
