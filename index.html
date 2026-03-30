@@ -9,6 +9,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
+	<link rel="stylesheet" href="./assets/modal.css">
 	<script src="scripts/script.js" defer></script>
 </head>
 <body>
@@ -41,35 +42,40 @@
 		<h2>Mes Projets <button class="modification"><a href="#modal"><img src="assets/icons/noir.png" alt="Mode édition">modifier</a></button></h2>
 
 		<aside id="modal" class="modal">
+			<div class="modalBlock">
 
-			<div class="modalGalerie">
-				<h3>Galerie photo</h3>
-				<div class="galerieModal"></div>
-				<br>
-				<button>Ajouter une photo</button>
-			</div>
-			
-			<div id="ajout" class="modalAjout">
-				<button class="arrow"><img src="assets/icons/arrow-left.png" alt="Retour en arrière"></button>
-				<button class="cross"><img src="assets/icons/xmark.png" alt="Fermer"></button>
-				<h3>Ajout photo</h3>
-				<form action="submit">
-					<div class="ajoutImage">
-						<img src="assets/icons/picture.png" alt="Ajouter une photo">
-						<button>+ Ajouter photo 
-							<input type="file" id="inputFile" accept="image/jpeg,image/png"  required>
-						</button>
-						<p>jpg, png : 4mo max</p>
+				<div class="modalGalerie">
+					<h3>Galerie photo </h3>
+					<div class="galerieModal">
+						xxxxxxxxxxx
 					</div>
-					<label for="imageTitle" class="imageTitle">Titre</label>
-					<input type="text" id="imageTitle" required>
-					<label for="imageCategorie" class="imageCat">Catégorie</label>
-					<select name="selectCategorie" id="imageCategorie" required>
-						<option value=""></option>
-					</select>
-					<br>
-					<button>Valider</button>
-				</form>
+					<div class="border"></div>
+					<button class="buttonGalerie">Ajouter une photo</button>
+				</div>
+				
+				<div id="ajout" class="modalAjout">
+					<button class="arrow"><img src="assets/icons/arrow-left.png" alt="Retour en arrière"></button>
+					<button class="cross"><img src="assets/icons/xmark.png" alt="Fermer"></button>
+					<h3>Ajout photo</h3>
+					<form action="#" class="ajoutForm">
+						<div class="ajoutImage">
+							<img src="assets/icons/picture.png" alt="Ajouter une photo">
+							<label for="inputFile" class="buttonAjoutPhoto">+ Ajouter photo </label>
+							<input type="file" id="inputFile" accept="image/jpeg,image/png"  required>
+							
+							<p>jpg, png : 4mo max</p>
+						</div>
+						<label for="imageTitle" class="imageTitle">Titre</label>
+						<input type="text" id="imageTitle" class="inputTitle">
+						<label for="imageCategorie" class="imageCat">Catégorie</label>
+						<select name="selectCategorie" id="imageCategorie" class="selectCat" >
+							<option value=""></option>
+						</select>
+					<div class="border"></div>
+					<button class="buttonValiderForm">Valider</button>
+					</form>
+				</div>
+			
 			</div>
 			
 		</aside>
