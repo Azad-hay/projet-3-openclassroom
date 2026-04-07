@@ -30,6 +30,7 @@ function renderGallery(works) {
   works.forEach(work => {
     const card = document.createElement('div');
     card.className =('card');
+    card.dataset.id = work.id
 
     const cardImg = document.createElement('img');
     cardImg.src = (work.imageUrl);
@@ -64,13 +65,14 @@ function renderGallery(works) {
     const categorie = await resCategorie.json();
 
     const button = document.querySelector('.filter');
+    
 
     const allBtn = document.createElement('button');
     allBtn.className = 'button';
     allBtn.textContent = 'Tous';
     button.appendChild(allBtn);
 
-    categorie.forEach(categories => {
+      categorie.forEach(categories => {
       const buttonFilter = document.createElement('button');
       buttonFilter.className = 'button';
       buttonFilter.dataset.id = categories.id;
@@ -94,3 +96,5 @@ function renderGallery(works) {
     console.error('Failed to fetch Categories:', er);
   }
 })();
+
+

@@ -14,7 +14,7 @@ form.addEventListener('submit', async function(e) {
       body: JSON.stringify({ email, password })
         });
     
-        if (!resLogin.ok) throw new Error (`HTTP ${resLogin.statut}`);
+        if (!resLogin.ok) throw new Error (`HTTP ${resLogin.status}`);
 
         const data = await resLogin.json();
         const token = data.token;

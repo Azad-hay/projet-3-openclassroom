@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="./assets/style.css">
 	<link rel="stylesheet" href="./assets/modal.css">
 	<script src="scripts/script.js" defer></script>
+	<script src="scripts/modal.js" defer></script>
 </head>
 <body>
 	<div class="edition-mode"><img src="assets/icons/blanc.png" alt="Mode édition">Mode édition</div>
@@ -45,9 +46,10 @@
 			<div class="modalBlock">
 
 				<div class="modalGalerie">
+					<button class="cross"><img src="assets/icons/xmark.png" alt="Fermer"></button>
 					<h3>Galerie photo </h3>
 					<div class="galerieModal">
-						xxxxxxxxxxx
+						
 					</div>
 					<div class="border"></div>
 					<button class="buttonGalerie">Ajouter une photo</button>
@@ -69,10 +71,10 @@
 						<input type="text" id="imageTitle" class="inputTitle">
 						<label for="imageCategorie" class="imageCat">Catégorie</label>
 						<select name="selectCategorie" id="imageCategorie" class="selectCat" >
-							<option value=""></option>
+							<option value="" class="imageCatValue"></option>
 						</select>
 					<div class="border"></div>
-					<button class="buttonValiderForm">Valider</button>
+					<button type="submit" class="buttonValiderForm">Valider</button>
 					</form>
 				</div>
 			
