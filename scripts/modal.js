@@ -128,6 +128,7 @@ function editionModeGallerie(allWorksMini){
             const imageCatOption = document.querySelector('.selectCat')
 
             const imageCatValue = document.createElement('option')
+            imageCatValue.value = categories.id;
             imageCatValue.textContent = categories.name;
             imageCatOption.appendChild(imageCatValue)
       
@@ -137,3 +138,73 @@ function editionModeGallerie(allWorksMini){
         console.error('Failed to fetch Categories:', e);
     }
 })();
+
+
+const previewImg = document.getElementById('inputFile')
+
+previewImg.addEventListener('change', (e) =>{
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+        const preview = document.getElementById('previewImg')
+        preview.src = e.target.result;
+        preview.style.display = 'block'
+    };
+    reader.readAsDataURL(file);
+})
+
+
+
+
+
+const btnAjoutPhotoProjet = document.querySelector('.buttonValiderForm')
+
+btnAjoutPhotoProjet.addEventListener('click', async (e) => {
+    e.preventDefault();
+
+    const token = localStorage.getItem('token');
+    const newImg = document.getElementById("inputFile").files[0];
+    const newImgTitle = document.getElementById('imageTitle').value;
+    const newImgCat = document.getElementById('imageCategorie').value;
+
+    const formData = new FormData();
+    formData.append('image', newImg)
+    formData.append('title', newImgTitle)
+    formData.append('category', parseInt(newImgCat));
+  
+
+    try {
+        const resNewImg = await fetch('http://localhost:5678/api/works',{
+
+            method: 'POST',
+            headers :{
+                   'Accept': '*/*',
+                        'Authorization': `Bearer ${token}`,
+                      
+                    },
+            body: formData
+            
+        });
+        if (!resNewImg.ok) throw new Error (`HTTP ${resNewImg.status}`);
+        const newWork = await resNewImg.json();
+
+        allWorksMini.push(newWork);
+
+        const resRefresh = await fetch('http://localhost:5678/api/works');
+        const updatedWorks = await resRefresh.json()
+
+        allWorksMini = updatedWorks
+        renderGallery(allWorksMini)
+        editionModeGallerie(allWorksMini)
+
+        
+        modalGalerie.style.transform = 'translateX(0)';
+        modalAjout.style.transform = 'translateX(100%)';
+
+    } catch (e) {
+        console.error("Echec de l'ajout:", e);
+    }
+
+});

@@ -156,6 +156,8 @@
 }
 .ajoutImage img{
     padding: 15px;
+    max-width: 80px;
+    max-height: 100px;
 }
 .buttonAjoutPhoto{
     display: flex;

@@ -33,6 +33,7 @@ function renderGallery(works) {
     card.dataset.id = work.id
 
     const cardImg = document.createElement('img');
+    cardImg.className = ('imgName');
     cardImg.src = (work.imageUrl);
     cardImg.alt = (work.title)
 
