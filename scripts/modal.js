@@ -1,6 +1,6 @@
 const arrowBack = document.querySelector('.arrow')
 const ajoutPhoto = document.querySelector('.buttonGalerie')
-const cross = document.querySelector('.cross')
+
 const modalAjout = document.querySelector('.modalAjout')
 const modalGalerie = document.querySelector('.modalGalerie')
 const btnModif = document.querySelector('.modification')
@@ -25,13 +25,15 @@ arrowBack.addEventListener('click', () => {
 })
 
 
-cross.addEventListener('click', () => {
-    modalcreate.style.opacity = '0';
-    setTimeout(() => {
-        modalcreate.style.display = 'none';
-    }, 300);
-    modalGalerie.style.transform = 'translateX(0)';
-    modalAjout.style.transform = 'translateX(100%)';
+document.querySelectorAll('.cross').forEach(btn => {
+    btn.addEventListener('click', () => {
+        modalcreate.style.opacity = '0';
+        setTimeout(() => {
+            modalcreate.style.display = 'none';
+        }, 300);
+        modalGalerie.style.transform = 'translateX(0)';
+        modalAjout.style.transform = 'translateX(100%)';
+    });
 });
 
 modalcreate.addEventListener('click', (e) => {
