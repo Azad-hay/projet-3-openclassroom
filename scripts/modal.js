@@ -1,6 +1,5 @@
 const arrowBack = document.querySelector('.arrow')
 const ajoutPhoto = document.querySelector('.buttonGalerie')
-
 const modalAjout = document.querySelector('.modalAjout')
 const modalGalerie = document.querySelector('.modalGalerie')
 const btnModif = document.querySelector('.modification')
