@@ -76,6 +76,7 @@
 }
 
 .trash {
+    cursor: pointer;
     width: 20px;
     height: 20px;
     display: block;
@@ -89,6 +90,7 @@
 
 
 .buttonGalerie{
+    cursor: pointer;
     width: 237px;
     height: 36px;
     border: 0;  
@@ -116,6 +118,7 @@
 }
 
 .arrow{
+    cursor: pointer;
     position: absolute;
     top: 25px;
     left: 30px;
@@ -124,6 +127,7 @@
 }
 
 .cross{
+    cursor: pointer;
     position: absolute;
     top: 25px;
     right: 30px;
@@ -139,6 +143,7 @@
 }
 
 .ajoutForm{
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -194,6 +199,7 @@
     
 }
 .inputTitle, .selectCat{
+    cursor: pointer;
     border: 0;
     box-shadow: 0px 4px 14px 0px #00000017;
     width: 420px;

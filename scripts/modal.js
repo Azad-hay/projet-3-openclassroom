@@ -169,6 +169,7 @@ btnAjoutPhotoProjet.addEventListener('click', async (e) => {
     const newImgTitle = document.getElementById('imageTitle').value;
     const newImgCat = document.getElementById('imageCategorie').value;
 
+
     const formData = new FormData();
     formData.append('image', newImg)
     formData.append('title', newImgTitle)
@@ -200,11 +201,36 @@ btnAjoutPhotoProjet.addEventListener('click', async (e) => {
         editionModeGallerie(allWorksMini)
 
         
+        setTimeout(() => {
         modalGalerie.style.transform = 'translateX(0)';
         modalAjout.style.transform = 'translateX(100%)';
+        }, 200);
+
+        document.querySelector('.ajoutForm').reset();
+        document.getElementById('previewImg').style.display = 'flex';
+        document.getElementById('previewImg').src = 'assets/icons/picture.png' ;
+        
 
     } catch (e) {
         console.error("Echec de l'ajout:", e);
     }
 
 });
+
+function checkForm() {
+    const newImg = document.getElementById('inputFile').files[0];
+    const newImgTitle = document.getElementById('imageTitle').value;
+    const newImgCat = document.getElementById('imageCategorie').value;
+
+    const btnValider = document.querySelector('.buttonValiderForm');
+
+    if (newImg && newImgTitle && newImgCat) {
+        btnValider.style.backgroundColor = '#1D6154';
+    } else {  
+        btnValider.style.backgroundColor = '#a7a7a7';
+    }
+}
+
+document.getElementById('inputFile').addEventListener('change', checkForm);
+document.getElementById('imageTitle').addEventListener('input', checkForm);
+document.getElementById('imageCategorie').addEventListener('change', checkForm);
